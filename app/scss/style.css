@@ -1,3 +1,25 @@
+@-webkit-keyframes fade-in {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -22,7 +44,7 @@ body {
 }
 
 .front-page {
-  height: 80vh;
+  height: 10vh;
   width: 100%;
 }
 
@@ -81,8 +103,33 @@ button,
   }
 }
 
+.header.open .header__menu > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__menu > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header .overlay {
+  display: none;
+  position: fixed;
+  top: 3.75rem;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
+  background-image: linear-gradient(#2d314d, transparent);
+}
+
 .header nav {
-  padding: 24px;
+  padding: 18px;
 }
 
 .header__menu > span {
@@ -90,6 +137,10 @@ button,
   width: 26px;
   height: 2px;
   background-color: #2d314d;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform-origin: 6px 1px;
+          transform-origin: 6px 1px;
 }
 
 .header__menu > span:not(last-child) {
