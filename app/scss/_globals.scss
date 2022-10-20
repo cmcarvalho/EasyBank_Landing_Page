@@ -67,6 +67,13 @@ button,
   border: 0px;
   border-radius: 50px;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
 }
 
 //Visibility
